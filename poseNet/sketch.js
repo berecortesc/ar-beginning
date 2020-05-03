@@ -4,7 +4,7 @@ let pose;
 let patrick;
 
 function preload(){
-patrick = loadImage('spring2020/art107/ar-beginning/image.jpg');
+patrick = loadImage('ar-beginning/image.jpg');
 }
 
 function setup() {
