@@ -8,7 +8,7 @@ patrick = loadImage('art107/ar-beginning/image.jpg');
 }
 
 function setup() {
-  createCanvas(600, 600, WEBGL);
+  createCanvas(700, 700, WEBGL);
   video = createCapture(VIDEO);
   video.hide();
   poseNet= ml5.poseNet(video, modelLoaded);
