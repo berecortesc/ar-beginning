@@ -4,7 +4,7 @@ let pose;
 let patrick;
 
 function preload(){
-patrick = loadImage('creativePractice4/patrick.gif');
+patrick = loadImage('art107/creativePractice4/image.jpg');
 }
 
 function setup() {
@@ -44,7 +44,7 @@ function draw() {
     rotateZ(frameCount * 0.01);
     rotateX(frameCount * 0.01);
     rotateY(frameCount * 0.01);
-    texture(patrick);
+    texture(image);
     //normalMaterial();
     box(50);
     pop();
