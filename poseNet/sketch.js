@@ -45,7 +45,7 @@ function draw() {
     rotateX(frameCount * 0.01);
     rotateY(frameCount * 0.01);
     texture(image);
-    normalMaterial();
+    //normalMaterial();
     box(50);
     pop();
 
