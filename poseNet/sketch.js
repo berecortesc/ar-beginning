@@ -1,11 +1,11 @@
 let video;
 let poseNet;
 let pose;
-let patrick;
+//let patrick;
 
-function preload(){
-patrick = loadImage('ar-beginning/image.jpg');
-}
+//function preload(){
+//patrick = loadImage('ar-beginning/image.jpg');
+//}
 
 function setup() {
   createCanvas(700, 700, WEBGL);
@@ -44,8 +44,8 @@ function draw() {
     rotateZ(frameCount * 0.01);
     rotateX(frameCount * 0.01);
     rotateY(frameCount * 0.01);
-    texture(image);
-    //normalMaterial();
+    //texture(image);
+    normalMaterial();
     box(50);
     pop();
 
