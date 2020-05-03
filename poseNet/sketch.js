@@ -1,11 +1,11 @@
 let video;
 let poseNet;
 let pose;
-//let patrick;
+let patrick;
 
-//function preload(){
-//patrick = loadImage('art107/creativePractice4/image.jpg');
-//}
+function preload(){
+patrick = loadImage('spring2020/art107/ar-beginning/image.jpg');
+}
 
 function setup() {
   createCanvas(600, 600, WEBGL);
