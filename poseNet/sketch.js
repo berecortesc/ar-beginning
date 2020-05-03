@@ -4,7 +4,7 @@ let pose;
 let patrick;
 
 function preload(){
-patrick = loadImage('art107/ar-beginning/image.jpg');
+patrick = loadImage('ar-beginning/image.jpg');
 }
 
 function setup() {
