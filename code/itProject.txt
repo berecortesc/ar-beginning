@@ -1,0 +1,131 @@
+Circle[] circles = new Circle[20];
+PImage it;
+int pointillize = 25;
+color pink = color(252, 3, 148);
+color yellow = color(250, 248, 157);
+color ran = color(random(255, 89));
+
+
+float diameter = width*.9;
+
+
+int numberCircles =21;
+int[] colorsP = new int[numberCircles];
+float lg_diam = width * .85;
+float lg_rad = lg_diam / 2;
+float lg_circ = PI * lg_diam;
+
+float cx = width/2;
+float cy = height/2;
+
+float sm_diam = (lg_circ / numberCircles);
+
+
+void setup()
+{
+  size(1400, 800);
+  for (int i = 0; i < circles.length; i++) {
+    circles[i] = new Circle(random(width), random(height), random(-3, 3), random(-3, 3), random(3, -3));
+    frameRate(200);
+    it = loadImage("finalClown.jpg");
+
+    background (0);
+
+    smooth();
+    colorsP[i] = int(random(0, 255));
+  }
+}
+void draw()
+{
+  //background(0);
+  int x = int(random(it.width));
+  int y = int(random(it.height));
+  int loc = x +y*width;
+  loadPixels();
+  float r = red(it.pixels[loc]);
+  float g = green(it.pixels[loc]);
+  float b = blue(it.pixels[loc]);
+  noStroke();
+
+  fill(yellow, g, b, 100);
+  rect(x, y, pointillize, pointillize);
+
+  //fill(pink);
+  //ellipse(cx, cy, diameter, diameter);
+
+
+  for (int i = 0; i< circles.length; i++)
+  {
+
+    circles[i].bcBounce();
+    circles[i].bcShowcase();
+    circles[i].setRans();
+  }
+
+  for (int h = 1; h <= numberCircles; h++) {
+    for (int i = 0; i< circles.length; i++)
+    {
+      float angle = h * TWO_PI / numberCircles;
+      float a = cx + cos(angle) * lg_rad;
+      float c = cy + sin(angle) * lg_rad;
+      //colorMode(HSB);
+      fill(colorsP[i], 100, 45);
+      rect(445, c+220, sm_diam, sm_diam*5);
+      rect(125, c+205, sm_diam, sm_diam*5);
+      rect(940, c+50, sm_diam, sm_diam*5);
+      rect(1300, c+518, sm_diam, sm_diam*5);
+
+      fill(colorsP[i], millis()%((i+5))*167, 255);
+      ellipse(a + 90, c +90, sm_diam*5, sm_diam*5);
+      ellipse(a + 400, c +400, sm_diam*5, sm_diam*5);
+      ellipse(a + 900, c +200, sm_diam*5, sm_diam*5);
+      ellipse(a + 1250, c +400, sm_diam*5, sm_diam*5);
+    }
+  }  
+  saveFrame(); 
+}
+
+class Circle
+{
+
+  float x;
+  float y;
+  float xSpeed;
+  float ySpeed;
+  float diameter;
+  //float cx; 
+  //float cy;
+
+  Circle(float x, float y, float xSpeed, float diameter, float ySpeed)
+  {
+    this.x = x;
+    this.y = y;
+    this.xSpeed = xSpeed;
+    this.ySpeed = ySpeed;
+    this.diameter = diameter;
+  }
+  void bcBounce() {
+    x += xSpeed;
+    if (x < 0 || x > width/2) {
+      xSpeed *= -1;
+    }
+
+    y += ySpeed;
+    if (y < 0 || y > height/2) {
+      ySpeed *= -1;
+    }
+  }
+  void setRans() {
+    for (int i =0; i < circles.length; i ++) {
+      xSpeed = random(-5, 5);
+      ySpeed = random(-5, 5);
+      colorsP[i] = int(random(255));
+    }
+  }
+
+  void bcShowcase() {
+    fill(pink, 25);
+    //loadPixels();
+    ellipse(x, y, 10, 10);
+  }
+}
