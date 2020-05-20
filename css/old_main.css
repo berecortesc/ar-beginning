@@ -1,12 +1,12 @@
 {
 	margin: 0;
 	padding: 0;
-	-moz-box-sizing: border-box; 
-	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-body {	
+body {
 	background-color: #000;
 	color: #222255;
 	font-family: 'Helvetica Neue','Helvetica', Arial, sans-serif;
@@ -133,10 +133,10 @@ td, th {
 .item_smallleft img.docpix, .item_largeright img.docpix {
 	width: 300px;
 	height: 260px;
-	
+
 }
 p {
-	color: #999999;
+	color: #99999;
 }
 
 
@@ -154,7 +154,7 @@ p {
 	padding: 5px;
 	font-size:10px;
 	font-style:oblique;
-	
+
 	background-color: #aaa;
 	margin-bottom: 20px;
 }
@@ -168,4 +168,3 @@ p {
 	margin-top: 20px;
 	border: 1px dashed black;
 }
-
