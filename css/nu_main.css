@@ -9,7 +9,7 @@
 
 
 body{
-    background: pink;
+    background: #F0FFFF;
    /* color:#aaa;*/
     color:#cc0066;
 
@@ -45,7 +45,6 @@ h3 {
 p {
     color: #000;
 }
-
 
 .note{
     color:#cc4725;
@@ -102,7 +101,7 @@ p {
     width: 100%
 }
 code{
-    background-color: #222;
+    background-color: #black;
 }
 
 @media (min-width: 750px) {
@@ -110,6 +109,7 @@ code{
         border-right:1px solid #d8d8d8;
         padding-right:30px;
     }
+
 }
 
 
